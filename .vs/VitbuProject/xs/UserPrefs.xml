@@ -1,0 +1,113 @@
+﻿<Properties StartupConfiguration="{10996381-DAD9-4CAF-AFDA-D6F811A5DE8A}|VitbuWebUI" BuildWithMSBuildOnMono="True">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/canerinali/Documents/Müşteriler/VitbuProject/VitbuWebUIKurumsalPanel/Controllers/CustomerController.cs" relfile="VitbuWebUIKurumsalPanel/Controllers/CustomerController.cs" line="46" column="1" />
+      <Breakpoint file="/Users/canerinali/Documents/Müşteriler/VitbuProject/VitbuWebUIKurumsalPanel/Controllers/VehicleController.cs" relfile="VitbuWebUIKurumsalPanel/Controllers/VehicleController.cs" line="43" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.VitbuWebUIKurumsalPanel PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.VitbuWebUIPartnerPanel PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VitbuWebUI/Views/Rezervation/Rezervation.cshtml">
+    <Files>
+      <File FileName="VitbuWebUIKurumsalPanel/Views/Rezervation/Rezervation.cshtml" Line="515" Column="54" />
+      <File FileName="VitbuWebUIKurumsalPanel/Controllers/RezervationController.cs" />
+      <File FileName="Entities/Abstract/ServiceType.cs" />
+      <File FileName="Entities/Abstract/VehicleCategory.cs" />
+      <File FileName="VitbuWebUIKurumsalPanel/wwwroot/css/custom-site.css" />
+      <File FileName="Entities/Abstract/Vehicle.cs" />
+      <File FileName="VitbuWebUIKurumsalPanel/Views/Shared/_Layout.cshtml" />
+      <File FileName="DataAccess/Concrete/EfCoreGenericDal.cs" />
+      <File FileName="VitbuWebUIKurumsalPanel/Controllers/CustomerController.cs" />
+      <File FileName="Entities/Abstract/AdditionalServices.cs" />
+      <File FileName="Entities/Abstract/User.cs" Line="1" Column="1" />
+      <File FileName="Entities/Abstract/Rezervation.cs" />
+      <File FileName="VitbuWebUIKurumsalPanel/Controllers/HomeController.cs" />
+      <File FileName="Entities/Abstract/Price.cs" />
+      <File FileName="Entities/Abstract/Customer.cs" />
+      <File FileName="Entities/Abstract/Reference.cs" />
+      <File FileName="Entities/Abstract/AdditionalServicesRezervation.cs" />
+      <File FileName="DataAccess/Concrete/EfAdditionalServicesRezervationDal.cs" />
+      <File FileName="DataAccess/Abstract/IAdditionalServicesRezervationDal.cs" />
+      <File FileName="Business/Abstract/IAdditionalServicesService.cs" />
+      <File FileName="Business/Abstract/IAdditionalServicesRezervationService.cs" />
+      <File FileName="Business/Concrete/AdditionalServicesRezervationManager.cs" />
+      <File FileName="Business/DependencyResolvers/Autofac/AutofacBussinessModule.cs" />
+      <File FileName="VitbuWebUIKurumsalPanel/Views/AppRole/MenuList.cshtml" />
+      <File FileName="Entities/Abstract/Company.cs" Line="1" Column="1" />
+      <File FileName="Entities/Abstract/PriceVehicle.cs" />
+      <File FileName="Entities/Abstract/PriceCarrier.cs" />
+      <File FileName="VitbuWebUIKurumsalPanel/Controllers/VehicleController.cs" />
+      <File FileName="Entities/Abstract/EntityBase.cs" />
+      <File FileName="Business/Abstract/ICustomerService.cs" />
+      <File FileName="Entities/Abstract/MenuCategory.cs" />
+      <File FileName="Entities/Abstract/Menu.cs" />
+      <File FileName="Entities/Abstract/Ulkeler.cs" />
+      <File FileName="Entities/Abstract/Role.cs" />
+      <File FileName="Business/Concrete/CustomerManager.cs" />
+      <File FileName="VitbuWebUI/Program.cs" Line="29" Column="1" />
+      <File FileName="VitbuWebUI/appsettings.json" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Startup.cs" Line="65" Column="1" />
+      <File FileName="VitbuWebUI/Components/MenuViewComponent.cs" Line="8" Column="31" />
+      <File FileName="VitbuWebUI/Business/BaseModelService.cs" Line="1" Column="33" />
+      <File FileName="VitbuWebUI/Controllers/AppRoleController.cs" Line="9" Column="29" />
+      <File FileName="VitbuWebUI/Models/ErrorViewModel.cs" Line="3" Column="33" />
+      <File FileName="VitbuWebUI/Models/HomeViewModel.cs" Line="4" Column="33" />
+      <File FileName="VitbuWebUI/Models/LoginVM.cs" Line="3" Column="18" />
+      <File FileName="VitbuWebUI/Models/SuperAdminRoleViewModel.cs" Line="5" Column="33" />
+      <File FileName="VitbuWebUI/Properties/PublishProfiles/FolderProfile.pubxml" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Views/AppRole/MenuAdd.cshtml" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Views/_ViewImports.cshtml" Line="8" Column="14" />
+      <File FileName="VitbuWebUI/Controllers/AuthorizationController.cs" Line="41" Column="80" />
+      <File FileName="VitbuWebUI/Controllers/CompanyController.cs" Line="15" Column="37" />
+      <File FileName="VitbuWebUI/Controllers/CustomerController.cs" Line="9" Column="31" />
+      <File FileName="VitbuWebUI/Controllers/HomeController.cs" Line="11" Column="29" />
+      <File FileName="VitbuWebUI/Controllers/RezervationController.cs" Line="55" Column="87" />
+      <File FileName="VitbuWebUI/Controllers/UserController.cs" Line="9" Column="29" />
+      <File FileName="VitbuWebUI/Controllers/VehicleController.cs" Line="9" Column="29" />
+      <File FileName="VitbuWebUIKurumsalPanel/Program.cs" Line="1" Column="1" />
+      <File FileName="VitbuWebUIKurumsalPanel/Startup.cs" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Views/Rezervation/Rezervation.cshtml" Line="9" Column="47" />
+      <File FileName="VitbuWebUI/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Views/Shared/_LayoutLogin.cshtml" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="VitbuWebUI/Views/Authorization/Login.cshtml" Line="25" Column="35" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="VitbuProject" expanded="True" selected="True">
+            <Node name="Business" expanded="True">
+              <Node name="Abstract" expanded="True" />
+            </Node>
+            <Node name="Entities" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+            <Node name="VitbuWebUIKurumsalPanel" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Company" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Rezervation" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="VitbuWebUIPartnerPanel" expanded="True">
+              <Node name="Components" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="AppRole" expanded="True" />
+                <Node name="User" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

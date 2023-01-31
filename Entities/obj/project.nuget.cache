@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "ymXIKF6DyYTVPtED5dagSEE/+lEo4wAE3D4QZsTpNZaN6MCswllP/BlabnMenfymps49za2fGDc1EuMnSsloAg==",
+  "success": true,
+  "projectFilePath": "/Users/canerinali/Documents/Müşteriler/VitbuProject/Entities/Entities.csproj",
+  "expectedPackageFiles": [
+    "/Users/canerinali/.nuget/packages/autofac/6.4.0/autofac.6.4.0.nupkg.sha512",
+    "/Users/canerinali/.nuget/packages/autofac.extensions.dependencyinjection/8.0.0/autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/Users/canerinali/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/canerinali/.nuget/packages/system.diagnostics.diagnosticsource/4.7.1/system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

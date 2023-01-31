@@ -1,0 +1,1323 @@
+﻿@model SuperAdminRoleViewModel
+
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <p class="p-rigth">
+                        <a data-toggle="modal" data-target="#postmodel" href="#postmodel" class="btn btn-primary">
+                            <span class="fa fa-edit"> Yeni</span>
+                        </a>
+                    </p>
+                    <table id="example" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">@Html.DisplayNameFor(model => model.Rezervations[0].Id)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].DepartureRoute)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].ArrivalRoute)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].StartDate)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].EndDate)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].PersonCount)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].DeparturePoint)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].Destination)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].Plate)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].Personal)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].PersonalGsm)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].PersonalTC)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].ReferenceId)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].CompanyId)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].VehicleCategoryId)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].VehicleId)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].TotalPrice)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].PriceId)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].CustomerId)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].UserId)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].FlightCode)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].AirplaneTime)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].RefCode)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (var i = 0; i < Model.Rezervations.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.Rezervations[i].Id</td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="DepartureRoute"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].DepartureRoute"
+                                               asp-for="@Model.Rezervations[i].DepartureRoute" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="ArrivalRoute"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].ArrivalRoute"
+                                               asp-for="@Model.Rezervations[i].ArrivalRoute" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="StartDate"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].StartDate"
+                                               asp-for="@Model.Rezervations[i].StartDate" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="EndDate"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].EndDate"
+                                               asp-for="@Model.Rezervations[i].EndDate" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="PersonCount"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].PersonCount"
+                                               asp-for="@Model.Rezervations[i].PersonCount" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="DeparturePoint"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].DeparturePoint"
+                                               asp-for="@Model.Rezervations[i].DeparturePoint" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="Destination"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].Destination"
+                                               asp-for="@Model.Rezervations[i].Destination" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="Plate"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].Plate"
+                                               asp-for="@Model.Rezervations[i].Plate" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="Personal"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].Personal"
+                                               asp-for="@Model.Rezervations[i].Personal" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="PersonalGsm"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].PersonalGsm"
+                                               asp-for="@Model.Rezervations[i].PersonalGsm" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="PersonalTC"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].PersonalTC"
+                                               asp-for="@Model.Rezervations[i].PersonalTC" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].CompanyId, new SelectList(ViewBag.CompanyId, "Id", "CompanyId", Model.Rezervations[i].CompanyId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "CompanyId", data_bind = @Model.Rezervations[i].Id })
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].VehicleCategoryId, new SelectList(ViewBag.VehicleCategoryId, "Id", "VehicleCategoryId", Model.Rezervations[i].VehicleCategoryId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "VehicleCategoryId", data_bind = @Model.Rezervations[i].Id })
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].ReferenceId, new SelectList(ViewBag.ReferenceId, "Id", "NameSurname", Model.Rezervations[i].ReferenceId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "ReferenceId", data_bind = @Model.Rezervations[i].Id })
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].VehicleId, new SelectList(ViewBag.VehicleId, "Id", "VehicleId", Model.Rezervations[i].VehicleId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "VehicleId", data_bind = @Model.Rezervations[i].Id })
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].CustomerId, new SelectList(ViewBag.CustomerId, "Id", "CustomerId", Model.Rezervations[i].CustomerId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "CustomerId", data_bind = @Model.Rezervations[i].Id })
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].UserId, new SelectList(ViewBag.UserId, "Id", "UserId", Model.Rezervations[i].UserId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "UserId", data_bind = @Model.Rezervations[i].Id })
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].PriceId, new SelectList(ViewBag.PriceId, "Id", "PriceId", Model.Rezervations[i].PriceId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "PriceId", data_bind = @Model.Rezervations[i].Id })
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="FlightCode"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].FlightCode"
+                                               asp-for="@Model.Rezervations[i].FlightCode" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="AirplaneTime"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].AirplaneTime"
+                                               asp-for="@Model.Rezervations[i].AirplaneTime" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="RefCode"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].RefCode"
+                                               asp-for="@Model.Rezervations[i].RefCode" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td class="project-actions text-right">
+                                        <a class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="@("#resultmodal" +Model.Rezervations[i].Id)" href="@("#resultmodal" +Model.Rezervations[i].Id)">
+                                            <i class="fas fa-folder">
+                                            </i>
+                                            View
+                                        </a>
+                                        <a id="editlist" class="btn btn-info btn-sm" data_bind="@Model.Rezervations[i].Id">
+                                            <i class="fas fa-pencil-alt">
+                                            </i>
+                                            Edit
+                                        </a>
+                                        <a id="saveList" class="btn btn-info btn-sm" style="display:none;" data_bind="@Model.Rezervations[i].Id">
+                                            <i class="fas fa-pencil-alt">
+                                            </i>
+                                            Kaydet
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("DeleteRezervation","Rezervation", new { ID = Model.Rezervations[i].Id})">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+
+@foreach (var rolemodal in (List<Rezervation>)Model.Rezervations)
+{
+    <div class="modal fade bd-example-modal-lg" id="@("resultmodal" +rolemodal.Id)" tabindex="-1" role="dialog" aria-labelledby="instructionsLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Taşımacı Rezervasyon</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body ml-5">
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].DepartureRoute) : @rolemodal.DepartureRoute</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].ArrivalRoute) : @rolemodal.ArrivalRoute</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].StartDate) : @rolemodal.StartDate</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].EndDate) : @rolemodal.EndDate</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].PersonCount) : @rolemodal.PersonCount</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].DeparturePoint) : @rolemodal.DeparturePoint</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].Destination) : @rolemodal.Destination</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].Plate) : @rolemodal.Plate</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].Personal) : @rolemodal.Personal</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].ReferenceId) : @rolemodal.ReferenceId</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].PersonalTC) : @rolemodal.PersonalTC</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].CompanyId) : @rolemodal.CompanyId</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].VehicleCategoryId) : @rolemodal.VehicleCategoryId</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].PriceId) : @rolemodal.PriceId</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].CustomerId) : @rolemodal.CustomerId</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].UserId) : @rolemodal.UserId</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].FlightCode) : @rolemodal.FlightCode</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].AirplaneTime) : @rolemodal.AirplaneTime</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].RefCode) : @rolemodal.RefCode</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="modal fade bd-example-modal-lg" id="postmodel" tabindex="-1" role="dialog" aria-labelledby="instructionsLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Rezervasyon Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+
+            <div class="modal-body ml-12">
+                <div class="form-group col-lg-12">
+                    <table id="example" class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label>Kalkış Noktası :</label>
+
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("SehirId", new SelectList(ViewBag.SehirId, "SehirId", "SehirAdi", null), "--- Başlangıç İl Seçiniz---", htmlAttributes: new { @class = "form-control", @id = "postsehir", @data_url = @Url.Action("GetLocationCity", "Rezervation") })
+                                                    @Html.DropDownList("IlceId", new SelectList(ViewBag.IlceId, "ilceId", "IlceAdi", null), "--- Başlangıç İlçe Seçiniz---", htmlAttributes: new { @class = "form-control", @id = "postilce", @data_url = @Url.Action("GetLocationRoute", "Rezervation"), @disabled = true })
+                                                    @Html.DropDownList("SemtMahId", new SelectList(ViewBag.SemtMahId, "SemtMahId", "SemtAdi", null), "--- Başlangıç Nokta Seçiniz---", htmlAttributes: new { @class = "form-control", @id = "postsemt", @disabled = true })
+                                                    <input class="form-control" id="postArrivalRoute" value="" style="display:none">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Varış Nokta :</label>
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("SehirId", new SelectList(ViewBag.SehirId, "SehirId", "SehirAdi", null), "--- Varış İl Seçiniz---", htmlAttributes: new { @class = "form-control", @id = "postendsehir", @data_url = @Url.Action("GetLocationCity", "Rezervation") })
+                                                    @Html.DropDownList("IlceId", new SelectList(ViewBag.IlceId, "ilceId", "IlceAdi", null), "--- Varış İlçe Seçiniz---", htmlAttributes: new { @class = "form-control", @id = "postendilce", @data_url = @Url.Action("GetLocationRoute", "Rezervation"), @disabled = true })
+                                                    @Html.DropDownList("SemtMahId", new SelectList(ViewBag.SemtMahId, "SemtMahId", "SemtAdi", null), "--- Varış Nokta Seçiniz---", htmlAttributes: new { @class = "form-control", @id = "postendsemt", @disabled = true })
+                                                    <input class="form-control" id="postDepartureRoute" value="" style="display:none">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Kalkış Tarihi :</label>
+                                                </td>
+                                                <td>
+                                                    <input type="datetime-local" class="form-control" data-date="" id="poststartDate" data-date-format="DD MMMM YYYY" value="">
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Varış Tarihi :</label>
+                                                </td>
+                                                <td>
+                                                    <input type="datetime-local" class="form-control" data-date="" id="postEndDate" data-date-format="DD MMMM YYYY" value="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Kalkış Nokta Detay :</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text"
+                                                           id="postDeparturePoint" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Varış Nokta Detay :</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text"
+                                                           id="postDestination" />
+                                                </td>
+                                            </tr>
+
+
+                                            @*<tr>
+                                                    <td>
+                                                        <label>Referans :</label>
+                                                    </td>
+                                                    <td>
+                                                        @Html.DropDownList("ReferenceId", new SelectList(ViewBag.ReferenceId, "Id", "NameSurname", null), null, htmlAttributes: new { @class = "form-control", @id = "postReference" })
+                                                    </td>
+                                                    <td>
+                                                        <a data-toggle="modal" data-target="#postreferans" href="#postreferans"><img src="https://img.icons8.com/color/48/null/plus--v1.png" style="height:20px" /></a>
+                                                    </td>
+                                                </tr>*@
+                                            <tr>
+                                                <td>
+                                                    <label>Müşteri :</label>
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("CompanyId", new SelectList(ViewBag.CompanyId, "Id", "CompanyName", null), null, htmlAttributes: new { @class = "form-control", @id = "postCompany" })
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Araç Tipi :</label>
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("VehicleCategoryId", new SelectList(ViewBag.VehicleCategoryId, "Id", "CategoryName", null), null, htmlAttributes: new { @class = "form-control", @id = "postVehicleCategory" })
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Hizmet Tipi :</label>
+
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("ServiceTypeId", new SelectList(ViewBag.ServiceTypeId, "Id", "ServiceName", null), null, htmlAttributes: new { @class = "form-control", @id = "postServisType" })
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Kişi Sayısı :</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text"
+                                                           id="postPersonCount" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Yolcu :</label>
+                                                </td>
+                                                <td>
+                                                    <textarea class="form-control" type="text"
+                                                              id="postCustomer" readonly></textarea>
+                                                </td>
+                                                <td>
+                                                    <a data-toggle="modal" data-target="#postcustomer" href="#postcustomer"><img src="https://img.icons8.com/color/48/null/plus--v1.png" style="height:20px" /></a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label>Taşıyıcı Firma:</label>
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("CarrierId", new SelectList(ViewBag.CarrierId, "Id", "CompanyName", null), "Seçiniz", htmlAttributes: new { @class = "form-control", @id = "postCarrier", @data_url = @Url.Action("GetCompanyUser", "Rezervation") })
+                                                    @Html.DropDownList("CarrierId", new SelectList(ViewBag.CarrierId, "Id", "CompanyPhone", null), null, htmlAttributes: new { @class = "form-control", @id = "postCarrierGetGsm", @style = "display:none" })
+                                                    @*@Html.DropDownList("UserId", new SelectList(ViewBag.UserId, "Id", "Phone", null), null, htmlAttributes: new { @class = "form-control", @id = "postUserGetGsm", @style = "display:none" })*@
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Taşıyıcı Firma Gsm:</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text"
+                                                           id="postUsergsm" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Taşıyıcı:</label>
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("UserId", new SelectList(ViewBag.UserId, "Id", "NameSurname", null), "", htmlAttributes: new { @class = "form-control", @id = "postCarrierUser", @disabled = true })
+                                                    @Html.DropDownList("UserId", new SelectList(ViewBag.UserId, "Id", "Phone", null), null, htmlAttributes: new { @class = "form-control", @id = "postUserGetGsm", @style = "display:none" })
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Plaka :</label>
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("VehicleId", new SelectList(ViewBag.VehicleId, "Id", "VehiclePlate", null), "Seçiniz", htmlAttributes: new { @class = "form-control", @id = "postPlate" })
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Ek Hizmetler :</label>
+
+                                                </td>
+                                                <td>
+                                                    @foreach (var check in ViewBag.AdditionalServicesId)
+                                                    {
+                                                        <div>
+                                                            <input type="checkbox" id="AdditionalService" name="AdditionalService" value="@check.Id" data-bind="@check.ServicePrice">
+                                                            <label for="AdditionalService" class="modallabel">@check.AdditionalServiceName: @check.ServicePrice TL</label>
+                                                        </div>
+                                                    }
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Uçuş Kodu :</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text"
+                                                           id="postFlightCode" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Uçuş Saati :</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text"
+                                                           id="postAirplaneTime" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" id="postaradurak" name="postaradurak" data-bind="150" />
+                                                    <label for="aradurak" data-bind="150">Ara Durak</label>
+                                                </td>
+                                                <td>
+                                                    @Html.DropDownList("SehirId", new SelectList(ViewBag.SehirId, "SehirId", "SehirAdi", null), "--- Varış İl Seçiniz---", htmlAttributes: new { @class = "form-control", @id = "postarasehir", @data_url = @Url.Action("GetLocationCity", "Rezervation"), @style = "display:none" })
+                                                    @Html.DropDownList("IlceId", new SelectList(ViewBag.IlceId, "ilceId", "IlceAdi", null), "--- Varış İlçe Seçiniz---", htmlAttributes: new { @class = "form-control", @id = "postarailce", @data_url = @Url.Action("GetLocationRoute", "Rezervation"), @style = "display:none", @disabled = true })
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label>İndirim Kodu :</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text"
+                                                           id="postRefCode" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Araç Fiyatı :</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text" value="0"
+                                                           id="postVehiclePrices" />
+                                                </td>
+                                                <td>
+                                                    <label>TL</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <label>Taşımacı Fiyatı :</label>
+                                                </td>
+                                                <td>
+                                                    <input class="form-control" type="text" value="0"
+                                                           id="postPrices" />
+                                                </td>
+                                                <td>
+                                                    <label>TL</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <a id="postmodel" href="#" class="btn btn-primary float-right">Kaydet</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="postcustomer" tabindex="-1" role="dialog" aria-labelledby="instructionsLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Yolcu Ekle</h5>
+                <button type="button" id="kapanmodal" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+
+            <div class="modal-body ml-12">
+                <div class="form-group col-lg-12">
+                    <a href="#" id="postaddCustomerhtml"><img src="https://img.icons8.com/color/48/null/plus--v1.png" style="height:20px" /></a>
+                    <table class="">
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">Uyruk</th>
+                                <th data-toggle="true">Cinsiyet</th>
+                                <th data-toggle="true">Ad</th>
+                                <th data-toggle="true">Soyad</th>
+                                <th data-toggle="true">Email</th>
+                                <th id="postCustomerPasaportNo" style="display:none" data-toggle="true">Pasaport No</th>
+                                <th id="postCustomerKimlik" style="display:none" data-toggle="true">Kimlik No</th>
+                                <th data-toggle="true">Telefon</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customer">
+                            <tr>
+                                <td>
+                                    <div>
+                                        <input type="radio" id="postCustomerTc" name="uyruk" />
+                                        <label for="uyruk">TC</label>
+                                        <input type="radio" id="postCustomerBilinmeyen" name="uyruk" />
+                                        <label for="uyruk">Bilinmeyen</label>
+                                        <input type="radio" id="postCustomerUyrukGir" name="uyruk" />
+                                        <label for="uyruk">Uyruk Gir</label>
+                                        <input type="text" id="postCustomerUyruk" name="uyruk" style="display:none" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <input type="radio" id="postCustomerCinsiyet" value="Erkek" name="cinsiyet" />
+                                        <label for="cinsiyet">Erkek</label>
+
+                                        <input type="radio" id="postCustomerCinsiyet" value="Kadın" name="cinsiyet" />
+                                        <label for="uyruk">Kadın</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" placeholder="Ad"
+                                           id="postCustomerAd" />
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" placeholder="Soyad"
+                                           id="postCustomerSoyad" />
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" placeholder="Email"
+                                           id="postCustomerEmail" />
+                                </td>
+                                <td id="postCustomerPasaportNo" style="display:none">
+                                    <input class="form-control" type="text" placeholder="Passaport"
+                                           id="postCustomerPasaportNo" style="display:none" />
+                                </td>
+                                <td id="postCustomerKimlik" style="display:none">
+                                    <input class="form-control" type="text" placeholder="Kimlik"
+                                           id="postCustomerKimlik" style="display:none" />
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" placeholder="Telefon"
+                                           id="postCustomerTelefon" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a id="postcustomer" href="#" class="btn btn-primary float-right">Kaydet</a>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="postreferans" tabindex="-1" role="dialog" aria-labelledby="instructionsLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Referans Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+
+            <div class="modal-body ml-12">
+                <div class="form-group col-lg-12">
+                    <table class="">
+                        <thead>
+                            <tr>
+                                <th data-toggle="true">Ad Soyad</th>
+                                <th data-toggle="true">Email</th>
+                                <th data-toggle="true">Telefon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input class="form-control" type="text"
+                                           id="postReferenceNameSurname" />
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text"
+                                           id="postReferenceEmail" />
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text"
+                                           id="postReferencePhone" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a id="postreferans" href="#" class="btn btn-primary float-right">Kaydet</a>
+        </div>
+    </div>
+</div>
+
+<script>$(document).ready(function () {
+        // Setup - add a text input to each footer cell
+        $('#example thead tr')
+            .clone(true)
+            .addClass('filters')
+            .appendTo('#example thead');
+
+        var table = $('#example').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+            "scrollX": true,
+            orderCellsTop: true,
+            fixedHeader: true,
+            initComplete: function () {
+                var api = this.api();
+
+                // For each column
+                api
+                    .columns()
+                    .eq(0)
+                    .each(function (colIdx) {
+                        // Set the header cell to contain the input element
+                        var cell = $('.filters th').eq(
+                            $(api.column(colIdx).header()).index()
+                        );
+                        var title = $(cell).text();
+                        $(cell).html('<input type="text" placeholder="' + title + '" />');
+
+                        // On every keypress in this input
+                        $(
+                            'input',
+                            $('.filters th').eq($(api.column(colIdx).header()).index())
+                        )
+                            .off('keyup change')
+                            .on('change', function (e) {
+                                // Get the search value
+                                $(this).attr('title', $(this).val());
+                                var regexr = '({search})'; //$(this).parents('th').find('select').val();
+
+                                var cursorPosition = this.selectionStart;
+                                // Search the column for that value
+                                api
+                                    .column(colIdx)
+                                    .search(
+                                        this.value != ''
+                                            ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                            : '',
+                                        this.value != '',
+                                        this.value == ''
+                                    )
+                                    .draw();
+                            })
+                            .on('keyup', function (e) {
+                                e.stopPropagation();
+
+                                $(this).trigger('change');
+                                $(this)
+                                    .focus()[0]
+                                    .setSelectionRange(cursorPosition, cursorPosition);
+                            });
+                    });
+            },
+        });
+    });
+    $(function () {
+        //$('#example').DataTable({
+        //    "paging": true,
+        //    "lengthChange": true,
+        //    "searching": true,
+        //    "ordering": true,
+        //    "info": true,
+        //    "autoWidth": true,
+        //    "scrollX": true
+        //});
+        //$('#taass').DataTable({
+        //    "paging": true,
+        //    "lengthChange": true,
+        //    "searching": true,
+        //    "ordering": true,
+        //    "info": true,
+        //    "autoWidth": true,
+        //    "scrollX": true
+        //});
+    });
+    $("body").on("click",
+        "#postaradurak:checked",
+        function () {
+            $('#postarasehir').show();
+            $('#postarailce').show();
+        });
+    $('#postaradurak:checked').each(function (index) {
+        var postVehiclePrices = $(this).val();
+        var rezervation = data.id;
+        var price = $(this).data("bind");
+        $.post(location.origin + "/Rezervation/Aradurak", {
+            additionalServicesId: additionalServices,
+            rezervationId: rezervation,
+            price: price,
+        }, function (data) {
+
+        });
+    });
+    $('a#editlist').on('click', function () {
+        var inputDataId = $(this).attr('data_bind');
+        debugger;
+        $(this).hide();
+        $("#saveList[data_bind='" + inputDataId + "']").show();
+        $("input[data-id='" + inputDataId + "']").removeAttr('readonly');
+    });
+
+    $('a#saveList').on('click', function () {
+        var inputDataId = $(this).attr('data_bind');
+        $(this).hide();
+        $("a#editlist[data_bind='" + inputDataId + "']").show();
+        $("input[data-id='" + inputDataId + "']").attr('readonly', 'readonly');
+        var Plate = $("input#Plate[data-id='" + inputDataId + "']").val();
+        var Personal = $("input#Personal[data-id='" + inputDataId + "']").val();
+        var PersonalGsm = $("input#PersonalGsm[data-id='" + inputDataId + "']").val();
+        var PersonQuantity = $("input#PersonQuantity[data-id='" + inputDataId + "']").val();
+        var PriceVehicle = $("input#PriceVehicle[data-id='" + inputDataId + "']").val();
+        var Reference = $("input#Reference[data-id='" + inputDataId + "']").val();
+        var ReferenceEmail = $("input#ReferenceEmail[data-id='" + inputDataId + "']").val();
+        var TravellerId = $("input#TravellerId[data-id='" + inputDataId + "']").val();
+        var DeparturePoint = $("input#DeparturePoint[data-id='" + inputDataId + "']").val();
+        var VehicleCategory = $("input#VehicleCategory[data-id='" + inputDataId + "']").val();
+        var CompanyId = $("input#CompanyId[data-id='" + inputDataId + "']").val();
+        var DeparturePoint = $("input#DeparturePoint[data-id='" + inputDataId + "']").val();
+        var DepartureRoute = $("input#DepartureRoute[data-id='" + inputDataId + "']").val();
+        var ArrivalRoute = $("input#ArrivalRoute[data-id='" + inputDataId + "']").val();
+        var Destination = $("input#Destination[data-id='" + inputDataId + "']").val();
+        var StartDate = $("input#VehicleCategory[data-id='" + inputDataId + "']").val();
+        var EndDate = $("input#EndDate[data-id='" + inputDataId + "']").val();
+        $.post(location.origin + "/Rezervation/ReferenceAdd", {
+            Plate: Plate,
+            Personal: Personal,
+            PersonalGsm: PersonalGsm,
+            PersonQuantity: PersonQuantity,
+            PriceVehicle: PriceVehicle,
+            Reference: Reference,
+            ReferenceEmail: ReferenceEmail,
+            TravellerId: TravellerId,
+            DeparturePoint: DeparturePoint,
+            VehicleCategory: VehicleCategory,
+            CompanyId: CompanyId,
+            DepartureRoute: DepartureRoute,
+            ArrivalRoute: ArrivalRoute,
+            Destination: Destination,
+            StartDate: StartDate,
+            EndDate: EndDate
+        }, function (data) {
+            if (data == "Başarılı!") {
+                $('#AdditionalService:checked').each(function (index) {
+                    var additionalServices = $(this).val();
+                    var rezervation = data.id;
+                    var price = $(this).data("bind");
+                    $.post(location.origin + "/Rezervation/AdditionalServicesRezervationAdd", {
+                        additionalServicesId: additionalServices,
+                        rezervationId: rezervation,
+                        price: price,
+                    }, function (data) {
+
+                    });
+                });
+                createAlert('', data, 'Düzenleme işlemi başarılı şekilde gerçekleşti', 'success', true, true, 'pageMessages');
+            }
+            else {
+                createAlert('Hata', data, 'Düzenleme işlemi başarısız şekilde gerçekleşti', 'danger', true, false, 'pageMessages');
+            }
+        });
+    })
+    $('a#postmodel').on('click', function () {
+        debugger;
+        var PostPlate = $("input#Plate").val();
+        var PostPersonal = $("input#Personal").val();
+        var PostPersonalGsm = $("input#PersonalGsm").val();
+        var PostPersonQuantity = $("input#PersonQuantity").val();
+        var PostPriceVehicle = $("input#PriceVehicle").val();
+        var PostReference = $("input#Reference").val();
+        var PostReferenceEmail = $("input#ReferenceEmail").val();
+        var PostTravellerId = $("input#TravellerId").val();
+        var PostDeparturePoint = $("input#postDepartureRoute").val();
+        var PostVehicleCategory = $("input#VehicleCategory").val();
+        var PostCompanyId = $("input#CompanyId").val();
+        var PostDepartureRoute = $("input#DepartureRoute").val();
+        var PostArrivalRoute = $("input#postArrivalRoute").val();
+        var PostDestination = $("input#Destination").val();
+        var PostStartDate = $("input#poststartDate").val();
+        var PostEndDate = $("input#postEndDate").val();
+        var PostPersonCount = $("input#postPersonCount").val();
+        $.post(location.origin + "/company/companymodaladd", {
+            Plate: Plate,
+            Personal: Personal,
+            PersonalGsm: PersonalGsm,
+            PersonQuantity: PersonQuantity,
+            PriceVehicle: PriceVehicle,
+            Reference: Reference,
+            ReferenceEmail: ReferenceEmail,
+            TravellerId: TravellerId,
+            DeparturePoint: DeparturePoint,
+            VehicleCategory: VehicleCategory,
+            CompanyId: CompanyId,
+            DepartureRoute: DepartureRoute,
+            ArrivalRoute: ArrivalRoute,
+            Destination: Destination,
+            StartDate: StartDate,
+            EndDate: EndDate
+        }, function (data) {
+            if (data == "Başarılı!") {
+                createAlert('', data, 'Ekleme işlemi başarılı şekilde gerçekleşti', 'success', true, true, 'pageMessages');
+                location.reload();
+            }
+            else
+                createAlert('Hata', data, 'Ekleme işlemi başarısız şekilde gerçekleşti', 'danger', true, false, 'pageMessages');
+        });
+    })
+    $("#postCarrier").change(function () {
+        $("#postCarrierUser").empty();
+        debugger;
+        var val = $(this).val();
+        var url = $("#postCarrier").data("url") + '?value=' + val;
+        $.getJSON(url, function (data) {
+            $("#postCarrierUser").empty();
+            $("#postCarrierUser").removeAttr("disabled");
+            $("#postCarrierUser").append('<option selected disabled value="">Seçiniz</option>');
+            $.each(data, function (i, item) {
+                console.log(item);
+                $("#postCarrierUser").append($("<option>").text(item.nameSurname).val(item.id));
+            });
+            $("#postCarrierUser").removeAttr("disabled");
+        });
+        $("#postPlate").empty();
+        var val = $(this).val();
+        var url = location.origin + '/Rezervation/GetCompanyPlate?value=' + val;
+        $.getJSON(url, function (data) {
+            $("#postPlate").empty();
+            $("#postPlate").removeAttr("disabled");
+            $("#postPlate").append('<option selected disabled value="">Seçiniz</option>');
+            $.each(data, function (i, item) {
+                console.log(item);
+                $("#postPlate").append($("<option>").text(item.vehiclePlate).val(item.id)).attr("data-bind", item.vehiclePlate);
+            });
+            $("#postPlate").removeAttr("disabled");
+        });
+    });
+    $("#postarasehir").change(function () {
+        $("#postarailce").empty();
+        var v = $(this).val();
+        var url = $("#postarasehir").data("url") + '?value=' + v;
+        $.getJSON(url, function (data) {
+            $("#postarailce").empty();
+            $("#postarailce").removeAttr("disabled");
+            $("#postarailce").append('<option selected disabled value="">--- Başlangıç İlçe Seçiniz---</option>');
+            $.each(data, function (i, item) {
+                $("#postarailce").append($("<option>").text(item.ilceAdi).val(item.ilceId));
+            });
+        });
+    });
+    $("#postsehir").change(function () {
+        $("#postilce").empty();
+        var v = $(this).val();
+        var url = $("#postsehir").data("url") + '?value=' + v;
+        $.getJSON(url, function (data) {
+            $("#postilce").empty();
+            $("#postilce").removeAttr("disabled");
+            $("#postilce").append('<option selected disabled value="">--- Başlangıç İlçe Seçiniz---</option>');
+            $.each(data, function (i, item) {
+                $("#postilce").append($("<option>").text(item.ilceAdi).val(item.ilceId));
+            });
+        });
+    });
+    $("#postilce").change(function () {
+        $("#postsemt").empty();
+        var val = $(this).val();
+        var url = $("#postilce").data("url") + '?value=' + val;
+        $.getJSON(url, function (data) {
+            ;
+            $("#postsemt").empty();
+            $("#postsemt").removeAttr("disabled");
+            $("#postsemt").append('<option selected disabled value="">--- Başlangıç Nokta Seçiniz ---</option>');
+            $.each(data, function (i, item) {
+                $("#postsemt").append($("<option>").text(item.mahalleAdi).val(item.semtMahId));
+            });
+            $("#postsemt").removeAttr("disabled");
+        });
+    });
+    $("#postendsehir").change(function () {
+        $("#postendilce").empty();
+        var v = $(this).val();
+        var url = $("#postendsehir").data("url") + '?value=' + v;
+        $.getJSON(url, function (data) {
+            $("#postendilce").empty();
+            $("#postendilce").removeAttr("disabled");
+            $("#postendilce").append('<option selected disabled value="">--- Varış İlçe Seçiniz ---</option>');
+            $.each(data, function (i, item) {
+                $("#postendilce").append($("<option>").text(item.ilceAdi).val(item.ilceId));
+            });
+        });
+    });
+    $("#postendilce").change(function () {
+        $("#postendsemt").empty();
+        var val = $(this).val();
+        var url = $("#postendilce").data("url") + '?value=' + val;
+        $.getJSON(url, function (data) {
+            $("#postendsemt").empty();
+            $("#postendsemt").removeAttr("disabled");
+            $("#postendsemt").append('<option selected disabled value="">--- Varış Nokta Seçiniz ---</option>');
+            $.each(data, function (i, item) {
+                $("#postendsemt").append($("<option>").text(item.mahalleAdi).val(item.semtMahId));
+            });
+        });
+    });
+    $("#postendsemt").change(function () {
+        debugger;
+        var valueStart = $("#postsemt").val();
+        var valueEnd = $(this).val();
+        var url = location.origin + '/Rezervation/GetLocationPrice?valueStart=' + valueStart + '&valueEnd=' + valueEnd;
+        $.getJSON(url, function (data) {
+            if (data.length == 0) {
+                $("#postPrices").val('');
+            }
+            else {
+                $.each(data, function (i, item) {
+                    console.log(item);
+                    $("#postPrices").val(item.totalPrice);
+                    $("input#postArrivalRoute").val(item.startSemtMahId);
+                    $("input#postDepartureRoute").val(item.endtSemtMahId);
+                });
+            }
+        });
+    });
+
+    $("#postCarrier").change(function () {
+        var val = $(this).val();
+        if (val != "") {
+            var phone = $("#postCarrierGetGsm").find('option[value=' + val + ']').text()
+            $("#postUsergsm").val(phone);
+        }
+    });
+    $("#postsemt").change(function () {
+        var valueEnd = $("#postendsemt").val();
+        var valueStart = $(this).val();
+        var url = location.origin + '/Rezervation/GetLocationPrice?valueStart=' + valueStart + '&valueEnd=' + valueEnd;
+        $.getJSON(url, function (data) {
+            if (data.length == 0) {
+                $("#postPrices").val('');
+            }
+            else {
+                $.each(data, function (i, item) {
+                    debugger;
+                    console.log(item);
+                    $("#postPrices").val(item.totalPrice);
+                    $("input#postArrivalRoute").val(valueStart);
+                    $("input#DepartureRoute").val(valueEnd);
+                });
+            }
+        });
+    });
+    //$(document).ready(function () {
+    //    $("#postDate").flatpickr({
+    //        dateFormat: "d, m, Y",
+    //        noCalendar: false,
+    //        enableTime: false,
+    //    });
+
+    //    $("#postEndDate").flatpickr({
+    //        dateFormat: "d, m, Y",
+    //        noCalendar: false,
+    //        enableTime: false
+    //    });
+    //    $("#postTime").flatpickr({
+    //        dateFormat: "H:i",
+    //        noCalendar: true,
+    //        enableTime: true,
+    //    });
+
+    //    $("#postEndTime").flatpickr({
+    //        dateFormat: "H:i",
+    //        noCalendar: true,
+    //        enableTime: true
+    //    });
+    //});
+    $("body").on("keyup",
+        "#postPersonCount",
+        function () {
+            console.log(this.value.length);
+            if (this.value.length > 0) {
+                $('.select2-results').show()
+            }
+            else {
+                $('.select2-results').hide()
+            }
+        });
+    $("body").on("keyup",
+        "#postPersonCount",
+        function () {
+            $("tr#addcustomer").remove()
+            for (let i = 0; i < this.value - 1; i++) {
+                var datehtml = `
+                <tr id="addcustomer">
+                                <td>
+                                    <div>
+                                        <input type="radio" id="postCustomerTc`+ i + `" name="uyruk" />
+                                        <label for="uyruk">TC</label>
+                                        <input type="radio" id="postCustomerBilinmeyen`+ i + `" name="uyruk" />
+                                        <label for="uyruk">Bilinmeyen</label>
+                                        <input type="radio" id="postCustomerUyrukGir`+ i + `" name="uyruk" />
+                                        <label for="uyruk">Uyruk Gir</label>
+                                        <input type="text" id="postCustomerUyruk`+ i + `" name="uyruk" style="display:none" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <input type="radio" id="postCustomerCinsiyet`+ i + `" value="Erkek" name="cinsiyet" />
+                                        <label for="cinsiyet">Erkek</label>
+
+                                        <input type="radio" id="postCustomerCinsiyet`+ i + `" value="Kadın" name="cinsiyet" />
+                                        <label for="uyruk">Kadın</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" placeholder="Ad"
+                                           id="postCustomerAd`+ i + `" />
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" placeholder="Soyad"
+                                           id="postCustomerSoyad`+ i + `" />
+                                </td>
+                                 <td>
+                                    <input class="form-control" type="text" placeholder="Email"
+                                           id="postCustomerEmail`+ i + `" />
+                                </td>
+                                <td id="postCustomerPasaportNo`+ i + `" style="display:none">
+                                    <input class="form-control" type="text" placeholder="Pasaport No"
+                                           id="postCustomerPasaportNo`+ i + `" style="display:none" />
+                                </td>
+                                <td id="postCustomerKimlik`+ i + `" style="display:none">
+                                    <input class="form-control" type="text" placeholder="Kimlik No"
+                                           id="postCustomerKimlik`+ i + `" style="display:none"/>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text" placeholder="Telefon"
+                                           id="postCustomerTelefon`+ i + `" />
+                                </td>
+                            </tr>
+                `;
+                $("tbody#customer").children().first().after(datehtml)
+            }
+        });
+    $('a#postcustomer').on('click', function () {
+        debugger;
+        $("tbody#customer").children().each(function (index) {
+            var postCustomerUyruk = $(this).find('input#postCustomerUyruk').val();
+            var postCustomerCinsiyet = $(this).find("input#postCustomerCinsiyet:checked").val();
+            var postCustomerAd = $(this).find("input#postCustomerAd").val();
+            var postCustomerSoyad = $(this).find("input#postCustomerSoyad").val();
+            var postCustomerEmail = $(this).find("input#postCustomerEmail").val();
+            var postCustomerKimlik = $(this).find("input#postCustomerKimlik").val();
+            var postCustomerPasaportNo = $(this).find("input#postCustomerPasaportNo").val();
+            var postCustomerTelefon = $(this).find("input#postCustomerTelefon").val();
+            var postCustomerSms = $(this).find("input#postCustomerSms").val();
+            $.post(location.origin + "/superadmin/customermodaladd", {
+                Uyruk: postCustomerUyruk,
+                Cinsiyet: postCustomerCinsiyet,
+                Ad: postCustomerAd,
+                Soyad: postCustomerSoyad,
+                KimlikNo: postCustomerKimlik,
+                PasaportNo: postCustomerPasaportNo,
+                Email: postCustomerEmail,
+                Telefon: postCustomerTelefon,
+                Sms: postCustomerSms,
+                StatusID: "1"
+            }, function (data) {
+                $("#kapanmodal").click();
+                console.log(data)
+            });
+        });
+    })
+
+    $('a#postreferans').on('click', function () {
+        var postReferenceNameSurname = $('#postReferenceNameSurname').val();
+        var postReferenceEmail = $("#postReferenceEmail").val();
+        var postReferencePhone = $("#postReferencePhone").val();
+        $.post(location.origin + "/Rezervation/ReferenceAdd", {
+            NameSurname: postReferenceNameSurname,
+            Email: postReferenceEmail,
+            Phone: postReferencePhone
+        }, function (data) {
+            console.log(data);
+            $('select#postReference').append('<option selected value="' + data.id + '">' + data.nameSurname + '</option>');
+        });
+    })
+    $('a#postaddCustomerhtml').on('click', function () {
+        var datehtml = `
+                <tr id="addcustomer">
+                              <td>
+                                    <div>
+                                        <input type="radio" id="postCustomerTc`+ $("tbody#customer").children().length + `" name="uyruk" />
+                                        <label for="uyruk">TC</label>
+                                        <input type="radio" id="postCustomerBilinmeyen`+ $("tbody#customer").children().length + `" name="uyruk" />
+                                        <label for="uyruk">Bilinmeyen</label>
+                                        <input type="radio" id="postCustomerUyrukGir`+ $("tbody#customer").children().length + `" name="uyruk" />
+                                        <label for="uyruk">Uyruk Gir</label>
+                                        <input type="text" id="postCustomerUyruk`+ $("tbody#customer").children().length + `" name="uyruk" style="display:none" />
+                                    </div>
+                                </td>
+                                  <td>
+                                    <div>
+                                        <input type="radio" id="postCustomerCinsiyet`+ $("tbody#customer").children().length + `" value="Erkek" name="cinsiyet" />
+                                        <label for="cinsiyet">Erkek</label>
+
+                                        <input type="radio" id="postCustomerCinsiyet`+ $("tbody#customer").children().length + `" value="Kadın" name="cinsiyet" />
+                                        <label for="uyruk">Kadın</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text"
+                                           id="postCustomerAd`+ $("tbody#customer").children().length + `" placeholder="Ad"/>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text"
+                                           id="postCustomerSoyad`+ $("tbody#customer").children().length + `" placeholder="Soyad"/>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text"
+                                           id="postCustomerEmail`+ $("tbody#customer").children().length + `" placeholder="Email"/>
+                                </td>
+                                <td id="postCustomerPasaportNo`+ $("tbody#customer").children().length + `" style="display:none">
+                                    <input class="form-control" type="text"
+                                           id="postCustomerPasaportNo`+ $("tbody#customer").children().length + `" style="display:none" placeholder="Pasaport No"/>
+                                </td>
+                                <td id="postCustomerKimlik`+ $("tbody#customer").children().length + `" style="display:none">
+                                    <input class="form-control" type="text"
+                                           id="postCustomerKimlik`+ $("tbody#customer").children().length + `" style="display:none" placeholder="Kimlik No"/>
+                                </td>
+                                <td>
+                                    <input class="form-control" type="text"
+                                           id="postCustomerTelefon`+ $("tbody#customer").children().length + `" placeholder="Telefon"/>
+                                </td>
+                            </tr>
+                `;
+        $("tbody#customer").children().first().after(datehtml)
+        $("#postPersonCount").val($("tbody#customer").children().length)
+    });
+
+    $("body").on("click",
+        "[id*='postCustomerUyrukGir']",
+        function () {
+            var id = $(this).attr('id');
+            console.log(id.substr(id.length - 1));
+            if (id.substr(id.length - 1) == 'r') {
+                $('#postCustomerUyruk').show();
+                $('#postCustomerUyruk').val("");
+                $('th#postCustomerPasaportNo').each(function (index) { $('th#postCustomerPasaportNo').show() })
+                $('input#postCustomerPasaportNo').each(function (index) { $('input#postCustomerPasaportNo').show() })
+                $('td#postCustomerPasaportNo').each(function (index) { $('td#postCustomerPasaportNo').show() })
+                $('input#postCustomerKimlik').each(function (index) { $('input#postCustomerKimlik').hide() })
+                $('th#postCustomerKimlik').each(function (index) { $('th#postCustomerKimlik').hide() })
+                $("td#postCustomerKimlik").each(function (index) { $("td#postCustomerKimlik").hide() })
+            }
+            else {
+                $('#postCustomerUyruk' + id.substr(id.length - 1)).show();
+                $('#postCustomerUyruk' + id.substr(id.length - 1)).val("");
+                $('th#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('th#postCustomerPasaportNo' + id.substr(id.length - 1)).show() })
+                $('input#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('input#postCustomerPasaportNo' + id.substr(id.length - 1)).show() })
+                $('td#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('td#postCustomerPasaportNo' + id.substr(id.length - 1)).show() })
+                $('input#postCustomerKimlik' + id.substr(id.length - 1)).each(function (index) { $('input#postCustomerKimlik' + id.substr(id.length - 1)).hide() })
+                $('th#postCustomerKimlik' + id.substr(id.length - 1)).each(function (index) { $('th#postCustomerKimlik' + id.substr(id.length - 1)).hide() })
+                $("td#postCustomerKimlik" + id.substr(id.length - 1)).each(function (index) { $("td#postCustomerKimlik" + id.substr(id.length - 1)).hide() })
+            }
+        });
+
+    $("body").on("click",
+        "[id*='postCustomerBilinmeyen']",
+        function () {
+            var id = $(this).attr('id');
+            debugger;
+            console.log(id.substr(id.length - 1));
+            if (id.substr(id.length - 1) == 'n') {
+                $('#postCustomerUyruk').hide();
+                $('#postCustomerUyruk').val("Bilinmiyor");
+                $('th#postCustomerKimlik').each(function (index) { $('th#postCustomerKimlik').hide() })
+                $('td#postCustomerKimlik').each(function (index) { $('td#postCustomerKimlik').hide() })
+                $('input#postCustomerKimlik').each(function (index) { $('input#postCustomerKimlik').hide() })
+                $('th#postCustomerPasaportNo').each(function (index) { $('th#postCustomerPasaportNo').hide() })
+                $('td#postCustomerPasaportNo').each(function (index) { $('td#postCustomerPasaportNo').hide() })
+                $('input#postCustomerPasaportNo').each(function (index) { $('input#postCustomerPasaportNo').hide() })
+            }
+            else {
+                $('#postCustomerUyruk' + id.substr(id.length - 1)).hide()
+                $('#postCustomerUyruk' + id.substr(id.length - 1)).val("Bilinmiyor")
+                $('th#postCustomerKimlik' + id.substr(id.length - 1)).each(function (index) { $('th#postCustomerKimlik' + id.substr(id.length - 1)).hide() })
+                $('td#postCustomerKimlik' + id.substr(id.length - 1)).each(function (index) { $('td#postCustomerKimlik' + id.substr(id.length - 1)).hide() })
+                $('input#postCustomerKimlik' + id.substr(id.length - 1)).each(function (index) { $('input#postCustomerKimlik' + id.substr(id.length - 1)).hide() })
+                $('th#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('th#postCustomerPasaportNo' + id.substr(id.length - 1)).hide() })
+                $('td#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('td#postCustomerPasaportNo' + id.substr(id.length - 1)).hide() })
+                $('input#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('input#postCustomerPasaportNo' + id.substr(id.length - 1)).hide() })
+            }
+        });
+
+    $("body").on("click",
+        "[id*='postCustomerTc']",
+        function () {
+            var id = $(this).attr('id')
+            if (id.substr(id.length - 1) == 'c') {
+                $('#postCustomerUyruk').hide();
+                $('#postCustomerUyruk').val("TC");
+                $('th#postCustomerPasaportNo').each(function (index) { $('th#postCustomerPasaportNo').hide() })
+                $('td#postCustomerPasaportNo').each(function (index) { $('td#postCustomerPasaportNo').hide() })
+                $('input#postCustomerPasaportNo').each(function (index) { $('input#postCustomerPasaportNo').hide() })
+                $('th#postCustomerKimlik').each(function (index) { $('th#postCustomerKimlik').show() })
+                $('td#postCustomerKimlik').each(function (index) { $('td#postCustomerKimlik').show() })
+                $('input#postCustomerKimlik').each(function (index) { $('input#postCustomerKimlik').show() })
+            }
+            else {
+                $('#postCustomerUyruk' + id.substr(id.length - 1)).hide();
+                $('#postCustomerUyruk' + id.substr(id.length - 1)).val("TC");
+                $('th#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('th#postCustomerPasaportNo' + id.substr(id.length - 1)).hide() })
+                $('td#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('td#postCustomerPasaportNo' + id.substr(id.length - 1)).hide() })
+                $('input#postCustomerPasaportNo' + id.substr(id.length - 1)).each(function (index) { $('input#postCustomerPasaportNo' + id.substr(id.length - 1)).hide() })
+                $('th#postCustomerKimlik' + id.substr(id.length - 1)).each(function (index) { $('th#postCustomerKimlik' + id.substr(id.length - 1)).show() })
+                $('td#postCustomerKimlik' + id.substr(id.length - 1)).each(function (index) { $('td#postCustomerKimlik' + id.substr(id.length - 1)).show() })
+                $('input#postCustomerKimlik' + id.substr(id.length - 1)).each(function (index) { $('input#postCustomerKimlik' + id.substr(id.length - 1)).show() })
+            }
+        });
+    $('#postPlate').change(function () {
+        var url = location.origin + '/Rezervation/GetVehiclePrices?value=' + $(this).data("bind");
+        $.getJSON(url, function (data) {
+            $("#postVehiclePrices").val("");
+            $.each(data, function (i, item) {
+                console.log(item);
+                $("#postVehiclePrices").val();
+                var data = item.vehiclePrice + $('input#postVehiclePrices').val();
+                var arttir = 0;
+                var azalt = 0;
+                arttir += Number(item.vehiclePrice) + Number($('input#postVehiclePrices').val());
+                azalt -= Number(item.vehiclePrice) - Number($('input#postVehiclePrices').val());
+                var c = $('#postPlate').find(":selected").val() == item.id ? $('input#postVehiclePrices').val(arttir) : $('input#postVehiclePrices').val(azalt);
+            });
+        });
+    });
+
+    $('input#postaradurak').change(function () {
+        if (!$(this).is(":checked")) {
+            $('#postarasehir').hide();
+            $('#postarailce').hide();
+        }
+        var data = $(this).data("bind") + $('input#postPrices').val();
+        var arttir = 0;
+        var azalt = 0;
+        arttir += Number($(this).data("bind")) + Number($('input#postPrices').val());
+        azalt -= Number($(this).data("bind")) - Number($('input#postPrices').val());
+        var c = this.checked ? $('input#postPrices').val(arttir) : $('input#postPrices').val(azalt);
+    });
+    $('input#AdditionalService').change(function () {
+        var data = $(this).data("bind") + $('input#postPrices').val();
+        var arttir = 0;
+        var azalt = 0;
+        arttir += Number($(this).data("bind")) + Number($('input#postPrices').val());
+        azalt -= Number($(this).data("bind")) - Number($('input#postPrices').val());
+        var c = this.checked ? $('input#postPrices').val(arttir) : $('input#postPrices').val(azalt);
+    });</script>
