@@ -388,9 +388,6 @@ namespace DataAccess.Migrations
                     b.Property<string>("AirplaneTime")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ArrivalRoute")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CarrierId")
                         .HasColumnType("nvarchar(max)");
 
@@ -406,13 +403,19 @@ namespace DataAccess.Migrations
                     b.Property<string>("DeparturePoint")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DepartureRoute")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Destination")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EndDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EndIlce")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EndSehir")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EndSemtMah")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FlightCode")
@@ -452,6 +455,15 @@ namespace DataAccess.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("StartDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StartIlce")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StartSehir")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StartSemtMah")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StatusId")

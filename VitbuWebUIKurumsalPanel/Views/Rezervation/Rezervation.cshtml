@@ -15,8 +15,12 @@
                         <thead>
                             <tr>
                                 <th data-toggle="true">@Html.DisplayNameFor(model => model.Rezervations[0].Id)</th>
-                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].DepartureRoute)</th>
-                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].ArrivalRoute)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].StartSehir)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].StartIlce)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].StartSemtMah)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].EndSehir)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].EndIlce)</th>
+                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].EndSemtMah)</th>
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].StartDate)</th>
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].EndDate)</th>
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].PersonCount)</th>
@@ -26,7 +30,6 @@
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].Personal)</th>
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].PersonalGsm)</th>
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].PersonalTC)</th>
-                                <th>@Html.DisplayNameFor(model => model.Rezervations[0].ReferenceId)</th>
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].CompanyId)</th>
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].VehicleCategoryId)</th>
                                 <th>@Html.DisplayNameFor(model => model.Rezervations[0].VehicleId)</th>
@@ -46,20 +49,22 @@
                                 <tr>
                                     <td>@Model.Rezervations[i].Id</td>
                                     <td>
-                                        <input type="text"
-                                               readonly
-                                               id="DepartureRoute"
-                                               data-id="@Model.Rezervations[i].Id"
-                                               value="@Model.Rezervations[i].DepartureRoute"
-                                               asp-for="@Model.Rezervations[i].DepartureRoute" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                        @Html.DropDownListFor(model => Model.Rezervations[i].StartSehir, new SelectList(ViewBag.SehirId, "SehirId", "SehirAdi", Model.Rezervations[i].StartSehir), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "StartSehir", data_bind = @Model.Rezervations[i].Id })
                                     </td>
                                     <td>
-                                        <input type="text"
-                                               readonly
-                                               id="ArrivalRoute"
-                                               data-id="@Model.Rezervations[i].Id"
-                                               value="@Model.Rezervations[i].ArrivalRoute"
-                                               asp-for="@Model.Rezervations[i].ArrivalRoute" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                        @Html.DropDownListFor(model => Model.Rezervations[i].StartIlce, new SelectList(ViewBag.IlceId, "ilceId", "IlceAdi", Model.Rezervations[i].StartIlce), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "StartIlce", data_bind = @Model.Rezervations[i].Id })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(model => Model.Rezervations[i].StartSemtMah, new SelectList(ViewBag.SemtMahId, "SemtMahId", "MahalleAdi", Model.Rezervations[i].StartSemtMah), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "StartSemtMah", data_bind = @Model.Rezervations[i].Id })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(model => Model.Rezervations[i].EndSehir, new SelectList(ViewBag.SehirId, "SehirId", "SehirAdi", Model.Rezervations[i].EndSehir), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "EndSehir", data_bind = @Model.Rezervations[i].Id })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(model => Model.Rezervations[i].EndIlce, new SelectList(ViewBag.IlceId, "ilceId", "IlceAdi", Model.Rezervations[i].EndIlce), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "EndIlce", data_bind = @Model.Rezervations[i].Id })
+                                    </td>
+                                    <td>
+                                        @Html.DropDownListFor(model => Model.Rezervations[i].EndSemtMah, new SelectList(ViewBag.SemtMahId, "SemtMahId", "MahalleAdi", Model.Rezervations[i].EndSemtMah), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "EndSemtMah", data_bind = @Model.Rezervations[i].Id })
                                     </td>
                                     <td>
                                         <input type="text"
@@ -135,37 +140,40 @@
                                     </td>
                                     <td>
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => Model.Rezervations[i].CompanyId, new SelectList(ViewBag.CompanyId, "Id", "CompanyId", Model.Rezervations[i].CompanyId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "CompanyId", data_bind = @Model.Rezervations[i].Id })
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].CompanyId, new SelectList(ViewBag.CompanyId, "Id", "CompanyName", Model.Rezervations[i].CompanyId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "CompanyId", data_bind = @Model.Rezervations[i].Id })
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => Model.Rezervations[i].VehicleCategoryId, new SelectList(ViewBag.VehicleCategoryId, "Id", "VehicleCategoryId", Model.Rezervations[i].VehicleCategoryId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "VehicleCategoryId", data_bind = @Model.Rezervations[i].Id })
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].VehicleCategoryId, new SelectList(ViewBag.VehicleCategoryId, "Id", "CategoryName", Model.Rezervations[i].VehicleCategoryId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "VehicleCategoryId", data_bind = @Model.Rezervations[i].Id })
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => Model.Rezervations[i].ReferenceId, new SelectList(ViewBag.ReferenceId, "Id", "NameSurname", Model.Rezervations[i].ReferenceId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "ReferenceId", data_bind = @Model.Rezervations[i].Id })
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].VehicleId, new SelectList(ViewBag.VehicleId, "Id", "VehiclePlate", Model.Rezervations[i].VehicleId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "VehicleId", data_bind = @Model.Rezervations[i].Id })
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text"
+                                               readonly
+                                               id="TotalPrice"
+                                               data-id="@Model.Rezervations[i].Id"
+                                               value="@Model.Rezervations[i].TotalPrice"
+                                               asp-for="@Model.Rezervations[i].TotalPrice" style="background: none; color: black; background-color: transparent; border: 0px solid; width: 100%; height: 100%; " />
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].PriceId, new SelectList(ViewBag.PriceId, "Id", "TotalPrice", Model.Rezervations[i].PriceId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "PriceId", data_bind = @Model.Rezervations[i].Id })
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => Model.Rezervations[i].VehicleId, new SelectList(ViewBag.VehicleId, "Id", "VehicleId", Model.Rezervations[i].VehicleId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "VehicleId", data_bind = @Model.Rezervations[i].Id })
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].CustomerId, new SelectList(ViewBag.CustomerId, "Id", "Ad", Model.Rezervations[i].CustomerId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "CustomerId", data_bind = @Model.Rezervations[i].Id })
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => Model.Rezervations[i].CustomerId, new SelectList(ViewBag.CustomerId, "Id", "CustomerId", Model.Rezervations[i].CustomerId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "CustomerId", data_bind = @Model.Rezervations[i].Id })
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            @Html.DropDownListFor(model => Model.Rezervations[i].UserId, new SelectList(ViewBag.UserId, "Id", "UserId", Model.Rezervations[i].UserId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "UserId", data_bind = @Model.Rezervations[i].Id })
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            @Html.DropDownListFor(model => Model.Rezervations[i].PriceId, new SelectList(ViewBag.PriceId, "Id", "PriceId", Model.Rezervations[i].PriceId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "PriceId", data_bind = @Model.Rezervations[i].Id })
+                                            @Html.DropDownListFor(model => Model.Rezervations[i].UserId, new SelectList(ViewBag.UserId, "Id", "UserName", Model.Rezervations[i].UserId), null, htmlAttributes: new { @class = "form-control", @disabled = "true", @id = "UserId", data_bind = @Model.Rezervations[i].Id })
                                         </div>
                                     </td>
                                     <td>
@@ -238,8 +246,12 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body ml-5">
-                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].DepartureRoute) : @rolemodal.DepartureRoute</p>
-                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].ArrivalRoute) : @rolemodal.ArrivalRoute</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].StartSehir) : @rolemodal.StartSehir</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].StartIlce) : @rolemodal.StartIlce</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].StartSemtMah) : @rolemodal.StartSemtMah</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].EndSehir) : @rolemodal.EndSehir</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].EndIlce) : @rolemodal.EndIlce</p>
+                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].EndSemtMah) : @rolemodal.EndSemtMah</p>
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].StartDate) : @rolemodal.StartDate</p>
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].EndDate) : @rolemodal.EndDate</p>
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].PersonCount) : @rolemodal.PersonCount</p>
@@ -247,7 +259,6 @@
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].Destination) : @rolemodal.Destination</p>
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].Plate) : @rolemodal.Plate</p>
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].Personal) : @rolemodal.Personal</p>
-                    <p>@Html.DisplayNameFor(model => model.Rezervations[0].ReferenceId) : @rolemodal.ReferenceId</p>
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].PersonalTC) : @rolemodal.PersonalTC</p>
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].CompanyId) : @rolemodal.CompanyId</p>
                     <p>@Html.DisplayNameFor(model => model.Rezervations[0].VehicleCategoryId) : @rolemodal.VehicleCategoryId</p>
@@ -428,6 +439,7 @@
                                                 <td>
                                                     @Html.DropDownList("UserId", new SelectList(ViewBag.UserId, "Id", "NameSurname", null), "", htmlAttributes: new { @class = "form-control", @id = "postCarrierUser", @disabled = true })
                                                     @Html.DropDownList("UserId", new SelectList(ViewBag.UserId, "Id", "Phone", null), null, htmlAttributes: new { @class = "form-control", @id = "postUserGetGsm", @style = "display:none" })
+                                                    @Html.DropDownList("UserId", new SelectList(ViewBag.UserId, "Id", "IdentityNumber", null), null, htmlAttributes: new { @class = "form-control", @id = "postUserGetTc", @style = "display:none" })
                                                 </td>
                                             </tr>
                                             <tr>
@@ -657,92 +669,16 @@
     </div>
 </div>
 
-<script>$(document).ready(function () {
-        // Setup - add a text input to each footer cell
-        $('#example thead tr')
-            .clone(true)
-            .addClass('filters')
-            .appendTo('#example thead');
-
-        var table = $('#example').DataTable({
+<script>$(function () {
+        $('#example').DataTable({
             "paging": true,
             "lengthChange": true,
+            "searching": true,
             "ordering": true,
             "info": true,
             "autoWidth": true,
-            "scrollX": true,
-            orderCellsTop: true,
-            fixedHeader: true,
-            initComplete: function () {
-                var api = this.api();
-
-                // For each column
-                api
-                    .columns()
-                    .eq(0)
-                    .each(function (colIdx) {
-                        // Set the header cell to contain the input element
-                        var cell = $('.filters th').eq(
-                            $(api.column(colIdx).header()).index()
-                        );
-                        var title = $(cell).text();
-                        $(cell).html('<input type="text" placeholder="' + title + '" />');
-
-                        // On every keypress in this input
-                        $(
-                            'input',
-                            $('.filters th').eq($(api.column(colIdx).header()).index())
-                        )
-                            .off('keyup change')
-                            .on('change', function (e) {
-                                // Get the search value
-                                $(this).attr('title', $(this).val());
-                                var regexr = '({search})'; //$(this).parents('th').find('select').val();
-
-                                var cursorPosition = this.selectionStart;
-                                // Search the column for that value
-                                api
-                                    .column(colIdx)
-                                    .search(
-                                        this.value != ''
-                                            ? regexr.replace('{search}', '(((' + this.value + ')))')
-                                            : '',
-                                        this.value != '',
-                                        this.value == ''
-                                    )
-                                    .draw();
-                            })
-                            .on('keyup', function (e) {
-                                e.stopPropagation();
-
-                                $(this).trigger('change');
-                                $(this)
-                                    .focus()[0]
-                                    .setSelectionRange(cursorPosition, cursorPosition);
-                            });
-                    });
-            },
+            "scrollX": true
         });
-    });
-    $(function () {
-        //$('#example').DataTable({
-        //    "paging": true,
-        //    "lengthChange": true,
-        //    "searching": true,
-        //    "ordering": true,
-        //    "info": true,
-        //    "autoWidth": true,
-        //    "scrollX": true
-        //});
-        //$('#taass').DataTable({
-        //    "paging": true,
-        //    "lengthChange": true,
-        //    "searching": true,
-        //    "ordering": true,
-        //    "info": true,
-        //    "autoWidth": true,
-        //    "scrollX": true
-        //});
     });
     $("body").on("click",
         "#postaradurak:checked",
@@ -775,40 +711,58 @@
         $(this).hide();
         $("a#editlist[data_bind='" + inputDataId + "']").show();
         $("input[data-id='" + inputDataId + "']").attr('readonly', 'readonly');
-        var Plate = $("input#Plate[data-id='" + inputDataId + "']").val();
-        var Personal = $("input#Personal[data-id='" + inputDataId + "']").val();
-        var PersonalGsm = $("input#PersonalGsm[data-id='" + inputDataId + "']").val();
-        var PersonQuantity = $("input#PersonQuantity[data-id='" + inputDataId + "']").val();
-        var PriceVehicle = $("input#PriceVehicle[data-id='" + inputDataId + "']").val();
-        var Reference = $("input#Reference[data-id='" + inputDataId + "']").val();
-        var ReferenceEmail = $("input#ReferenceEmail[data-id='" + inputDataId + "']").val();
-        var TravellerId = $("input#TravellerId[data-id='" + inputDataId + "']").val();
-        var DeparturePoint = $("input#DeparturePoint[data-id='" + inputDataId + "']").val();
-        var VehicleCategory = $("input#VehicleCategory[data-id='" + inputDataId + "']").val();
-        var CompanyId = $("input#CompanyId[data-id='" + inputDataId + "']").val();
-        var DeparturePoint = $("input#DeparturePoint[data-id='" + inputDataId + "']").val();
-        var DepartureRoute = $("input#DepartureRoute[data-id='" + inputDataId + "']").val();
-        var ArrivalRoute = $("input#ArrivalRoute[data-id='" + inputDataId + "']").val();
-        var Destination = $("input#Destination[data-id='" + inputDataId + "']").val();
-        var StartDate = $("input#VehicleCategory[data-id='" + inputDataId + "']").val();
+        var StartSehir = $("select#StartSehir[data-bind='" + inputDataId + "']").val();
+        var StartIlce = $("select#StartIlce[data-bind='" + inputDataId + "']").val();
+        var StartSemtMah = $("select#StartSemtMah[data-bind='" + inputDataId + "']").val();
+        var EndSehir = $("select#EndSehir[data-bind='" + inputDataId + "']").val();
+        var EndIlce = $("select#EndIlce[data-bind='" + inputDataId + "']").val();
+        var EndSemtMah = $("select#EndSemtMah[data-bind='" + inputDataId + "']").val();
+        var StartDate = $("input#StartDate[data-id='" + inputDataId + "']").val();
         var EndDate = $("input#EndDate[data-id='" + inputDataId + "']").val();
-        $.post(location.origin + "/Rezervation/ReferenceAdd", {
+        var PersonCount = $("input#PersonCount[data-id='" + inputDataId + "']").val();
+        var DeparturePoint = $("input#DeparturePoint[data-id='" + inputDataId + "']").val();
+        var Destination = $("input#Destination[data-id='" + inputDataId + "']").val();
+        var Plate = $("input#Plate[data-id='" + inputDataId + "']").val();
+        var Personal = $("select#Personal[data-bind='" + inputDataId + "']").val();
+        var PersonalGsm = $("input#PersonalGsm[data-id='" + inputDataId + "']").val();
+        var PersonalTC = $("select#PersonalTC[data-bind='" + inputDataId + "']").val();
+        var CompanyId = $("select#CompanyId[data-bind='" + inputDataId + "']").val();
+        var VehicleCategoryId = $("select#VehicleCategoryId[data-bind='" + inputDataId + "']").val();
+        var VehicleId = $("select#VehicleId[data-bind='" + inputDataId + "']").val();
+        var TotalPrice = $("input#TotalPrice[data-id='" + inputDataId + "']").val();
+        var PriceId = $("input#PriceId[data-id='" + inputDataId + "']").val();
+        var CustomerId = $("select#CustomerId[data-bind='" + inputDataId + "']").val();
+        var UserId = $("select#UserId[data-bind='" + inputDataId + "']").val();
+        var FlightCode = $("input#FlightCode[data-id='" + inputDataId + "']").val();
+        var AirplaneTime = $("input#AirplaneTime[data-id='" + inputDataId + "']").val();
+        var RefCode = $("input#RefCode[data-id='" + inputDataId + "']").val();
+        $.post(location.origin + "/Rezervation/ReferenceEdit", {
+            Id: inputDataId,
+            StartSehir: StartSehir,
+            StartIlce: StartIlce,
+            StartSemtMah: StartSemtMah,
+            EndSehir: EndSehir,
+            EndIlce: EndIlce,
+            EndSemtMah: EndSemtMah,
+            StartDate: StartDate,
+            EndDate: EndDate,
+            PersonCount: PersonCount,
+            DeparturePoint: DeparturePoint,
+            Destination: Destination,
             Plate: Plate,
             Personal: Personal,
             PersonalGsm: PersonalGsm,
-            PersonQuantity: PersonQuantity,
-            PriceVehicle: PriceVehicle,
-            Reference: Reference,
-            ReferenceEmail: ReferenceEmail,
-            TravellerId: TravellerId,
-            DeparturePoint: DeparturePoint,
-            VehicleCategory: VehicleCategory,
+            PersonalTC: PersonalTC,
             CompanyId: CompanyId,
-            DepartureRoute: DepartureRoute,
-            ArrivalRoute: ArrivalRoute,
-            Destination: Destination,
-            StartDate: StartDate,
-            EndDate: EndDate
+            VehicleCategoryId: VehicleCategoryId,
+            VehicleId: VehicleId,
+            TotalPrice: TotalPrice,
+            PriceId: PriceId,
+            CustomerId: CustomerId,
+            UserId: UserId,
+            FlightCode: FlightCode,
+            AirplaneTime: AirplaneTime,
+            RefCode: RefCode
         }, function (data) {
             if (data == "Başarılı!") {
                 $('#AdditionalService:checked').each(function (index) {
@@ -832,40 +786,59 @@
     })
     $('a#postmodel').on('click', function () {
         debugger;
-        var PostPlate = $("input#Plate").val();
-        var PostPersonal = $("input#Personal").val();
-        var PostPersonalGsm = $("input#PersonalGsm").val();
-        var PostPersonQuantity = $("input#PersonQuantity").val();
-        var PostPriceVehicle = $("input#PriceVehicle").val();
-        var PostReference = $("input#Reference").val();
-        var PostReferenceEmail = $("input#ReferenceEmail").val();
-        var PostTravellerId = $("input#TravellerId").val();
-        var PostDeparturePoint = $("input#postDepartureRoute").val();
-        var PostVehicleCategory = $("input#VehicleCategory").val();
-        var PostCompanyId = $("input#CompanyId").val();
-        var PostDepartureRoute = $("input#DepartureRoute").val();
-        var PostArrivalRoute = $("input#postArrivalRoute").val();
-        var PostDestination = $("input#Destination").val();
-        var PostStartDate = $("input#poststartDate").val();
-        var PostEndDate = $("input#postEndDate").val();
-        var PostPersonCount = $("input#postPersonCount").val();
-        $.post(location.origin + "/company/companymodaladd", {
+        var StartSehir = $("select#postsehir").val();
+        var StartIlce = $("select#postilce").val();
+        var StartSemtMah = $("select#postsemt").val();
+        var EndSehir = $("select#postendsehir").val();
+        var EndIlce = $("select#postendilce").val();
+        var EndSemtMah = $("select#postendsemt").val();
+        var StartDate = $("input#poststartDate").val();
+        var EndDate = $("input#postEndDate").val();
+        var PersonCount = $("input#postPersonCount").val();
+        var DeparturePoint = $("input#postDeparturePoint").val();
+        var Destination = $("input#postDestination").val();
+        var Plate = $("input#postPlate").val();
+        var Personal = $("select#postCarrier").val();
+        var PersonalGsm = $("input#postUsergsm").val();
+        var PersonalTC = $("select#postUserGetTc").val();
+        var CompanyId = $("select#postCompany").val();
+        var VehicleCategoryId = $("select#VehicleCategoryId").val();
+        var VehicleId = $("select#postPlate").val();
+        var TotalPrice = $("input#postPrices").val();
+        var PriceId = $("input#PriceId").val();
+        var CustomerId = $("select#postCustomer").val();
+        var UserId = $("select#postCarrierUser").val();
+        var FlightCode = $("input#postFlightCode").val();
+        var AirplaneTime = $("input#postAirplaneTime").val();
+        var RefCode = $("input#postRefCode").val();
+        debugger;
+        $.post(location.origin + "/Rezervation/RezervationAdd", {
+            StartSehir: StartSehir,
+            StartIlce: StartIlce,
+            StartSemtMah: StartSemtMah,
+            EndSehir: EndSehir,
+            EndIlce: EndIlce,
+            EndSemtMah: EndSemtMah,
+            StartDate: StartDate,
+            EndDate: EndDate,
+            PersonCount: PersonCount,
+            DeparturePoint: DeparturePoint,
+            Destination: Destination,
             Plate: Plate,
             Personal: Personal,
             PersonalGsm: PersonalGsm,
-            PersonQuantity: PersonQuantity,
-            PriceVehicle: PriceVehicle,
-            Reference: Reference,
-            ReferenceEmail: ReferenceEmail,
-            TravellerId: TravellerId,
-            DeparturePoint: DeparturePoint,
-            VehicleCategory: VehicleCategory,
+            PersonalTC: PersonalTC,
             CompanyId: CompanyId,
-            DepartureRoute: DepartureRoute,
-            ArrivalRoute: ArrivalRoute,
-            Destination: Destination,
-            StartDate: StartDate,
-            EndDate: EndDate
+            VehicleCategoryId: VehicleCategoryId,
+            VehicleId: VehicleId,
+            TotalPrice: TotalPrice,
+            PriceId: PriceId,
+            CustomerId: CustomerId,
+            CarrierId: UserId,
+            UserId: UserId,
+            FlightCode: FlightCode,
+            AirplaneTime: AirplaneTime,
+            RefCode: RefCode
         }, function (data) {
             if (data == "Başarılı!") {
                 createAlert('', data, 'Ekleme işlemi başarılı şekilde gerçekleşti', 'success', true, true, 'pageMessages');

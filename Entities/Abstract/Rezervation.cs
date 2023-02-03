@@ -5,8 +5,12 @@ namespace Entities.Abstract
 {
     public class Rezervation : EntityBase
     {
-        public string DepartureRoute { get; set; }
-        public string ArrivalRoute { get; set; }
+        public string StartSehir { get; set; }
+        public string StartIlce { get; set; }
+        public string StartSemtMah { get; set; }
+        public string EndSehir { get; set; }
+        public string EndIlce { get; set; }
+        public string EndSemtMah { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public string PersonCount { get; set; }

@@ -16,11 +16,13 @@ namespace VitbuWebUIKurumsalPanel.Controllers
     {
         IUserService _userService;
         ILogService _logService;
+        ICompanyService _companyService;
 
-        public AuthorizationController(IUserService userService, ILogService logService)
+        public AuthorizationController(IUserService userService, ILogService logService, ICompanyService companyService)
         {
             _userService = userService;
             _logService = logService;
+            _companyService = companyService;
         }
 
         [HttpGet]
@@ -35,7 +37,8 @@ namespace VitbuWebUIKurumsalPanel.Controllers
             if (ModelState.IsValid)
             {
                 var user = _userService.Login(loginVM.UserName, loginVM.Password);
-                if (user != null)
+                var companyPartner = _companyService.GetList(x => x.Id == user.CompanyId);
+                if (user != null && companyPartner[0].CompanyType == "Bussines")
                 {
                     var claims = new List<Claim>
                     {
